@@ -1,17 +1,22 @@
 # Desafio Técnico - Escribo Inovação para o Aprendizado.
 
 Aplicativo que verifica quais numeros dentro do intervalo de 0 ao valor escolhido são divisiveis por 3 e 5, os exibe, e exibe a soma dos mesmos.
+Aplicativo desenvolvido em Dart.
 
-## Getting Started
+![WhatsApp Image 2022-01-20 at 23 58 24](https://user-images.githubusercontent.com/84648471/150458153-677b18f2-3a8d-4455-bb24-9ecff783a288.jpeg)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Como clonar e importar:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Faça o download do projeto (precisa ter uma conta no github).
+Abra o terminal do Android Studio.
+Clique em File --> Open e abra o projeto.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# Escribo"  
+
+Desafio do Teste:
+
+
+Não permitir números negativo.
+
+
+Permitir apenas números inteiros.
