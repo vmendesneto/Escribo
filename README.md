@@ -13,7 +13,7 @@ O usuário inseri um valor válido no campo a esquerda da tela, como no exemplo 
 
 
 
-Pode se fazer o download do aplicativo pelo link abaixo ou seguir as instruções para clonar o mesmo.
+Pode-se fazer o download do aplicativo pelo link abaixo ou seguir as instruções para clonar e importar o mesmo.
 
 Link para Download: https://drive.google.com/file/d/1maKNNM2I27zjQnnOSo7psnKV9sthb3nS/view?usp=sharing
 
