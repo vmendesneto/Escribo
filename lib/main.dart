@@ -31,7 +31,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final controller = TextEditingController();
-
   List<String> dataList = [];
   int result = 0;
   int? dado;
@@ -40,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+        backgroundColor: Colors.yellow,
         appBar: AppBar(
           title: const Align(
               alignment: Alignment.center,
@@ -69,23 +68,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 35,
                       width: 90,
                       decoration: const BoxDecoration(
-                          color: Colors.blue,
+                        color: Colors.blue,
                       ),
-                      child:Align(alignment: Alignment.center, child:  TextFormField(
-                        style: const TextStyle (color: Colors.yellow),
-                        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                        keyboardType: TextInputType.number,
-                        cursorColor: Colors.yellow,
-                        textAlign: TextAlign.center,
-                        validator: (value) {
-                          if (value!.isEmpty || value == "") {
-                            return "Insira um Número Válido";
-                          }
-                          return null;
-                        },
-                        autofocus: true,
-                        controller: controller,
-                      ))),
+                      child: Align(
+                          alignment: Alignment.center,
+                          child: TextFormField(
+                            style: const TextStyle(color: Colors.yellow),
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly
+                            ],
+                            keyboardType: TextInputType.number,
+                            cursorColor: Colors.yellow,
+                            textAlign: TextAlign.center,
+                            autofocus: true,
+                            controller: controller,
+                          ))),
                   RaisedButton(
                       color: Colors.blue,
                       child: const Text("OK"),
@@ -93,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () {
                         if (controller.text.isEmpty || controller.text == "") {
                           total = 0;
-                          return null;
+                          showAlertDialog(context);
                         } else {
                           total = 0;
                           dataList = [];
@@ -131,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 15,
               ),
               Container(
-                width: 40,
+                  width: 40,
                   decoration: const BoxDecoration(color: Colors.blue),
                   child: ListView.builder(
                       scrollDirection: Axis.vertical,
@@ -178,5 +175,18 @@ class _MyHomePageState extends State<MyHomePage> {
             ]),
           ),
         ));
+  }
+
+  showAlertDialog(BuildContext context) async {
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return const AlertDialog(
+            title: Center(child: Text("Insira um número")),
+          );
+        });
+    await Future.delayed(const Duration(seconds: 2));
+    Navigator.pop(context);
   }
 }
