@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       decoration: const BoxDecoration(
                           color: Colors.blue,
                       ),
-                      child: TextFormField(
+                      child:Align(alignment: Alignment.center, child:  TextFormField(
                         style: const TextStyle (color: Colors.yellow),
                         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                         keyboardType: TextInputType.number,
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         },
                         autofocus: true,
                         controller: controller,
-                      )),
+                      ))),
                   RaisedButton(
                       color: Colors.blue,
                       child: const Text("OK"),
