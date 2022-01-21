@@ -1,115 +1,182 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Teste Escribo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Dasafio Técnico - Escribo'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
+  const MyHomePage({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  final controller = TextEditingController();
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  List<String> dataList = [];
+  int result = 0;
+  int? dado;
+  int total = 0;
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+      backgroundColor: Colors.yellow,
+        appBar: AppBar(
+          title: const Align(
+              alignment: Alignment.center,
+              child: Text(
+                "Desafio Técnico - Escribo",
+                style: TextStyle(color: Colors.yellow),
+              )),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        body: SingleChildScrollView(
+          child: Container(
+            margin: EdgeInsets.all(2),
+            child: Column(children: [
+              const SizedBox(
+                height: 30,
+              ),
+              const Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Digite um número inteiro.",
+                    style: TextStyle(color: Colors.blue, fontSize: 30),
+                  )),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                      height: 35,
+                      width: 90,
+                      decoration: const BoxDecoration(
+                          color: Colors.blue,
+                      ),
+                      child: TextFormField(
+                        style: const TextStyle (color: Colors.yellow),
+                        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                        keyboardType: TextInputType.number,
+                        cursorColor: Colors.yellow,
+                        textAlign: TextAlign.center,
+                        validator: (value) {
+                          if (value!.isEmpty || value == "") {
+                            return "Insira um Número Válido";
+                          }
+                          return null;
+                        },
+                        autofocus: true,
+                        controller: controller,
+                      )),
+                  RaisedButton(
+                      color: Colors.blue,
+                      child: const Text("OK"),
+                      textColor: Colors.yellow,
+                      onPressed: () {
+                        if (controller.text.isEmpty || controller.text == "") {
+                          total = 0;
+                          return null;
+                        } else {
+                          total = 0;
+                          dataList = [];
+                          dado = int.parse(controller.text);
+                          int i = 1;
+                          for (i; i < dado!; i++) {
+                            double res = i / 3;
+                            double rest = i / 5;
+                            if (res % 1 == 0 || rest % 1 == 0) {
+                              total = total + i;
+                              dataList.add(i.toString());
+                            }
+                          }
+                          result = total;
+                          setState(() {
+                            result = result;
+                            dataList = dataList;
+                          });
+                          FocusScope.of(context).requestFocus(FocusNode());
+                        }
+                      }),
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              const Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Os Valores divisiveis por 3 e 5 inferiores ao número informado \n são:",
+                  style: TextStyle(color: Colors.blue, fontSize: 15),
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Container(
+                width: 40,
+                  decoration: const BoxDecoration(color: Colors.blue),
+                  child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      itemCount: dataList.length,
+                      itemBuilder: (context, int index) {
+                        return dataList.toString() != null
+                            ? Align(
+                                alignment: Alignment.center,
+                                child: Text(dataList[index].toString(),
+                                    style: const TextStyle(
+                                        color: Colors.yellow, fontSize: 25)))
+                            : Container();
+                      })),
+              const SizedBox(
+                height: 15,
+              ),
+              const Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Resultado da soma dos números acima é:",
+                  style: TextStyle(color: Colors.blue, fontSize: 15),
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                    alignment: Alignment.center,
+                    height: 35,
+                    width: 90,
+                    color: Colors.blue,
+                    child: Text(
+                      result.toString(),
+                      style:
+                          const TextStyle(color: Colors.yellow, fontSize: 25),
+                    )),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+            ]),
+          ),
+        ));
   }
 }
