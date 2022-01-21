@@ -1,6 +1,6 @@
-# teste_escribo
+# Desafio Técnico - Escribo Inovação para o Aprendizado.
 
-A new Flutter project.
+Aplicativo que verifica quais numeros dentro do intervalo de 0 ao valor escolhido são divisiveis por 3 e 5, os exibe, e exibe a soma dos mesmos.
 
 ## Getting Started
 
