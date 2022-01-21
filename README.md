@@ -4,9 +4,12 @@ Aplicativo para Android que verifica quais numeros dentro do intervalo de 0 ao v
 
 Aplicativo desenvolvido em Dart.
 
+# Como Usar:
+
+O usuário inseri um valor válido no campo a esquerda da tela, como no exemplo abaixo foi inserido o número 10, e pressiona o botão do OK para que o app gere a resposta.
 
 
-![WhatsApp Image 2022-01-20 at 23 58 24](https://user-images.githubusercontent.com/84648471/150458153-677b18f2-3a8d-4455-bb24-9ecff783a288.jpeg)
+![WhatsApp Image 2022-01-21 at 07 57 47](https://user-images.githubusercontent.com/84648471/150515697-1673b9d2-0bba-4828-8974-59ba99b73acb.jpeg)
 
 
 
