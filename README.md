@@ -19,7 +19,12 @@ Link para Download: https://drive.google.com/file/d/1maKNNM2I27zjQnnOSo7psnKV9st
 
 
 Faça o download do projeto (precisa ter uma conta no github).
+
+
 Abra o terminal do Android Studio.
+
+
+
 Clique em File --> Open e abra o projeto.
 
 
