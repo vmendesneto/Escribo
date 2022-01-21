@@ -12,7 +12,7 @@ Aplicativo desenvolvido em Dart.
 
 Pode se fazer o download do aplicativo pelo link abaixo ou seguir as instruções para clonar o mesmo.
 
-Link para Download: https://drive.google.com/file/d/1_dlbO07qliHgQ1SnIQH5qFnTf7U570i4/view?usp=sharing
+Link para Download: https://drive.google.com/file/d/1maKNNM2I27zjQnnOSo7psnKV9sthb3nS/view?usp=sharing
 
 
 Como clonar e importar:
