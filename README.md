@@ -15,7 +15,7 @@ Pode se fazer o download do aplicativo pelo link abaixo ou seguir as instruçõe
 Link para Download: https://drive.google.com/file/d/1maKNNM2I27zjQnnOSo7psnKV9sthb3nS/view?usp=sharing
 
 
-Como clonar e importar:
+# Como clonar e importar:
 
 
 Faça o download do projeto (precisa ter uma conta no github).
@@ -23,7 +23,7 @@ Abra o terminal do Android Studio.
 Clique em File --> Open e abra o projeto.
 
 
-Desafio do Teste:
+# Desafio do Teste:
 
 
 Não permitir números negativo.
