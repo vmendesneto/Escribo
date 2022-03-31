@@ -1,4 +1,4 @@
-# Desafio Técnico - Escribo Inovação para o Aprendizado.
+# Teste de verificação
 
 Aplicativo para Android que verifica quais numeros dentro do intervalo de 0 ao valor escolhido são divisiveis por 3 e 5, os exibe, e exibe a soma dos mesmos.
 
