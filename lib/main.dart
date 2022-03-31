@@ -7,12 +7,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Teste Escribo',
+      title: 'Desafio',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Dasafio Técnico - Escribo'),
+      home: const MyHomePage(title: 'Dasafio Técnico'),
     );
   }
 }
@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: const Align(
               alignment: Alignment.center,
               child: Text(
-                "Desafio Técnico - Escribo",
+                "Desafio Técnico",
                 style: TextStyle(color: Colors.yellow),
               )),
         ),
